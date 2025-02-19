@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 }
 
 const oxanium = Oxanium({
-  weight: [/*Medium*/ '500', /*Semibold*/ '600'],
-  subsets: ['latin'], //carrega somente os caracteres comuns.
+  weight: ['500', '600'],
+  subsets: ['latin'],
   variable: '--font-oxanium',
 })
 
-const montserrat = Oxanium({
-  weight: [/*Regular*/ '400', /*Semibold*/ '600'],
-  subsets: ['latin'], //carrega somente os caracteres comuns.
+const montserrat = Montserrat({
+  weight: ['400', '600'],
+  subsets: ['latin'],
   variable: '--font-montserrat',
 })
 
@@ -27,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oxanium.variable} ${montserrat.variable}`}>
       <body className="bg-gray-900 text-gray-100 antialiased bg-[url(/background.png)] bg-no-repeat bg-top md:bg-right-top">
-        {children}
+        <main className="max-w-[1240px] mx-auto px-5 py-8 md:py-0">
+          {children}
+        </main>
       </body>
     </html>
   )
